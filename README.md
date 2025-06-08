@@ -12,11 +12,8 @@ It allows users to:
 ## Project Structure
 
 release-notes-viewer/
-├── index.html
-├── main.js
-├── locales/
-│ ├── en.json
-│ └── es.json
+
+![alt text](image-1.png)
 
 ---
 
