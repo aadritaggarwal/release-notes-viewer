@@ -1,0 +1,120 @@
+// Sample array of release notes
+const releaseNotes = [
+    {
+      version: '2025.24.1',
+      notes: [
+        'Improved Autopilot performance.',
+        'Enhanced user interface for media controls.'
+      ]
+    },
+    {
+      version: '2025.23.5',
+      notes: [
+        'Bug fixes and stability improvements.',
+        'Updated navigation maps.'
+      ]
+    }
+  ];
+  
+
+
+  const resources = {
+    en: {
+      translation: {
+        title: "Release Notes",
+        version: "Version",
+        item_0_0: "Improved Autopilot performance.",
+        item_0_1: "Enhanced user interface for media controls.",
+        item_1_0: "Bug fixes and stability improvements.",
+        item_1_1: "Updated navigation maps."
+
+      }
+    },
+    es: {
+      translation: {
+        title: "Notas de la versión",
+        version: "Versión",
+        item_0_0: "Rendimiento mejorado del piloto automático.",
+        item_0_1: "Interfaz de usuario mejorada para controles multimedia.",
+        item_1_0: "Corrección de errores y mejoras de estabilidad.",
+        item_1_1: "Mapas de navegación actualizados."
+      }
+    }
+  };
+
+
+// Init i18next
+i18next.init({
+    lng: 'en',
+    debug: true,
+    resources
+  }, function(err, t) {
+    updateContent();
+  });
+
+  
+document.querySelector('#english').addEventListener(
+    'click', ()=>changeLanguage('en')
+  );
+
+document.querySelector('#spanish').addEventListener(
+    'click', ()=>changeLanguage('es')
+  );
+  
+
+  function changeLanguage(lng) {
+    console.log("Entered here: "+lng);
+    i18next.changeLanguage(lng, updateContent);
+  }
+
+  function updateContent() {
+    document.getElementById('title').textContent = i18next.t('title');
+  
+    const container = document.getElementById('release-notes-container');
+    container.innerHTML = ''; 
+  
+    var i=0;
+    releaseNotes.forEach(note => {
+      const versionHeading = document.createElement('h2');
+      versionHeading.textContent = `${i18next.t('version')} ${note.version}`;
+      container.appendChild(versionHeading);
+  
+      const notesList = document.createElement('ul');
+      
+      note.notes.forEach(item => {
+        const listItem = document.createElement('li');
+        let j=0;
+        listItem.textContent = `${i18next.t('item_`${i}`_`${j}`')}`; 
+        j+=1;
+        notesList.appendChild(listItem);
+      });
+      
+      container.appendChild(notesList);
+      i+=1;
+    });
+  }
+
+//   // Function to render release notes
+//   function renderReleaseNotes() {
+//     const container = document.getElementById('release-notes-container');
+  
+//     releaseNotes.forEach(function(note) {
+//       // Create version heading
+//       const versionHeading = document.createElement('h2');
+//       versionHeading.textContent = `Version ${note.version}`;
+//       container.appendChild(versionHeading);
+  
+//       // Create list of notes
+//       const notesList = document.createElement('ul');
+//       note.notes.forEach(function(item){
+//         const listItem = document.createElement('li');
+//         listItem.textContent = item;
+//         notesList.appendChild(listItem);
+//       });
+  
+//       container.appendChild(notesList);
+//     });
+//   }
+  
+//   // Call the function to render notes on page load
+//   renderReleaseNotes();

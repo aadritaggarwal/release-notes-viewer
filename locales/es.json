@@ -1,0 +1,20 @@
+{
+    "title": "Notas de la versión",
+    "version": "Versión",
+    "releases": [
+      {
+        "version": "2025.24.1",
+        "notes": [
+          "Mejora en el rendimiento del piloto automático.",
+          "Interfaz de usuario mejorada para controles de medios."
+        ]
+      },
+      {
+        "version": "2025.23.5",
+        "notes": [
+          "Corrección de errores y mejoras de estabilidad.",
+          "Mapas de navegación actualizados."
+        ]
+      }
+    ]
+  }

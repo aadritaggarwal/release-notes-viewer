@@ -1,0 +1,20 @@
+{
+    "title": "Release Notes",
+    "version": "Version",
+    "releases": [
+      {
+        "version": "2025.24.1",
+        "notes": [
+          "Improved Autopilot performance.",
+          "Enhanced user interface for media controls."
+        ]
+      },
+      {
+        "version": "2025.23.5",
+        "notes": [
+          "Bug fixes and stability improvements.",
+          "Updated navigation maps."
+        ]
+      }
+    ]
+  }
