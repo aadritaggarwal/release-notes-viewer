@@ -45,10 +45,10 @@ http://127.0.0.1:5500/index.html
 
 ## Tech Used
 
-- HTML, CSS, Vanilla JavaScript
+- HTML, JavaScript
 - [`i18next`](https://www.i18next.com/) for internationalization
 - JSON for storing localized release notes
-- Optional: `i18next-http-backend` to load translations from `/locales`
+- Optional: `i18next-http-backend` to load translations from `/locales` (refer main.js to see how to implement it.)
 
 ---
 
